@@ -1,0 +1,373 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+header .site-branding a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header .menu-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .menu-wrap .add-to-cart-button {
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.product img {
+    max-width: 100%;
+}
+
+.product h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.product p {
+    margin: 10px 0;
+}
+
+.product-details {
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 400px;
+}
+
+.product-details img {
+    max-width: 100%;
+}
+
+.product-details h3 {
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.product-details p {
+    margin: 10px 0;
+}
+
+.product-details button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* CSS for testimonials/reviews section */
+
+#testimonials {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#testimonials h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.testimonial {
+    margin-bottom: 40px;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.author {
+    text-align: right;
+    font-weight: bold;
+}
+
+
+/* CSS for product categories section */
+
+#product-categories {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#product-categories h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.category {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.category img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.category h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.category a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.category a:hover {
+    background-color: #555;
+}
+
+/* CSS for featured products section */
+
+#featured-products {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#featured-products h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.product {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.product a:hover {
+    background-color: #555;
+}
+
+/* CSS for the About Us section */
+
+#about-us {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+}
+
+#about-us .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#about-us h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#about-us p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
+/* CSS for the footer section */
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer-links, footer .contact-info {
+    flex: 1;
+    margin-right: 20px;
+}
+
+footer h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+footer .copyright {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/*
+*========= 404 Page =========
+*/
+    .error-page img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .error-page button a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        padding: inherit;
+    }
+
+    .error-page button {
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #000;
+    }
+    
+    .error-page .error-back-home {
+        text-align: center;
+    }
+
+/*
+* ======== Add to cart ===========
+*/
+.add-to-card-popover {
+    padding: 10px;
+}
+
+.add-to-card-popover .product-list .product-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted #000;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.add-to-card-popover .product-total {
+    text-align: center;
+}
+
+.add-to-card-popover .product-list figure {
+    margin: 0;
+    padding: 0;
+}
+
+.add-to-card-popover .product-list .post-content {
+    align-self: center;
+}
+
+.add-to-card-popover .product-list .post-content .post-title,
+.add-to-card-popover .product-total {
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.add-to-card-popover img {
+    height: 100px;
+    width: 100px;
+}
+
+.add-to-card-popover .checkout-button {
+    text-align: center;
+}
