@@ -15,7 +15,7 @@
                                     <img src="<?php echo $product['featured_image']; ?>" alt="Product 2">
                                     <h2 class="post-title"><?php echo $product['post_title']; ?></h2>
                                     <span class="post-price"><?php echo '$'. $product['price'] . '.00'; ?></span>
-                                    <button class="add-to-cart" data-postId="<?php echo $product['post_id']; ?>">Add to cart</button>
+                                    <button class="add-to-cart" data-postId="<?php echo $product['post_id']; ?>" data-price="<?php echo $product['price']; ?>">Add to cart</button>
                                 </div>
                             </section>
                         </main>

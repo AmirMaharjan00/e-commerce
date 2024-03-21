@@ -52,10 +52,12 @@ if( ! function_exists( 'add_to_cart_ajax_call' ) ) :
      */
     function add_to_cart_ajax_call() {
         global $database;
-        $post_id = isset( $_POST['post_id'] ) ? $_POST['post_id']: '';
+        $post_ids = isset( $_POST['post_ids'] ) ? $_POST['post_ids']: '';
+        var_dump( $post_ids );
+        $_SESSION['post_ids'] = $post_ids;
         if( ! empty( $database->all_posts ) && is_array( $database->all_posts ) ) :
             foreach( $database->all_posts as $product ) :
-                if( $post_id == $product['post_id'] ) :
+                if( $post_ids == $product['post_id'] ) :
                     ?>
                         <div class="product-item">
                             <figure>

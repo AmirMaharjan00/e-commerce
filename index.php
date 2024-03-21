@@ -11,7 +11,7 @@
         <section id="featured-products">
             <h2>Featured Products</h2>
             <?php
-                add_to_cart_ajax_call();
+                // add_to_cart_ajax_call();
                 if( ! empty( $database->all_posts ) && is_array( $database->all_posts ) ) :
                     foreach( $database->all_posts as $product ) :
                       ?>
