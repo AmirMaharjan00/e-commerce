@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/external/fontawesome/css/all.css">
 </head>
 <body>
+    <?php session_start(); ?>
     <header>
         <h1 class="site-branding"><a href="index.php">ShopSwiftly</a></h1>
         <div class="menu-wrap">
@@ -23,21 +24,53 @@
         </div>
         <div class="add-to-card-popover" id="add-to-card-popover" popover>
             <div class="product-list">
-                
+                <?php
+                    if( ! empty( $_SESSION['post_ids'] ) && is_array( $_SESSION['post_ids'] ) ) :
+                        $database = new Database\DatabaseInfo();
+                        foreach( $_SESSION['post_ids'] as $post ) :
+                            foreach( $database->get_products() as $database_product ) :
+                                if( $database_product['post_id'] == $post ) :
+                                    ?>
+                                        <div class="product-item">
+                                            <figure>
+                                                <img src="<?php echo $database_product['featured_image']; ?>" alt="">
+                                            </figure>   
+                                            <div class="post-content">
+                                                <h2 class="post-title"><?php echo $database_product['post_title']; ?></h2>
+                                                <span class="post-price"><?php echo '$'. $database_product['price'] . '.00'; ?></span>
+                                            </div>
+                                        </div>
+                                    <?php
+                                endif;
+                            endforeach;
+                        endforeach;
+                    endif;
+                ?>
             </div>
             <div class="product-total">
                 <span class="total-label">Total</span>
-                <span class="total-price">$100.00</span>
+                <span class="total-price">
+                    <?php
+                    $total_amount;
+                        if( ! empty( $_SESSION['price_items'] ) && is_array( $_SESSION['price_items'] ) ) :
+                            $total_amount = array_sum( $_SESSION['price_items'] );
+                            echo $total_amount;
+                        else:
+                            $total_amount = 'NULL';
+                            echo $total_amount;
+                        endif;
+                    ?>
+                </span>
             </div>
             <div class="checkout-button">
             <form action="https://uat.esewa.com.np/epay/main" method="POST">
-                <input value="90" name="tAmt" type="hidden">
+                <input value="<?php echo $total_amount; ?>" name="tAmt" type="hidden">
                 <input value="90" name="amt" type="hidden">
                 <input value="0" name="txAmt" type="hidden">
                 <input value="0" name="psc" type="hidden">
                 <input value="0" name="pdc" type="hidden">
                 <input value="EPAYTEST" name="scd" type="hidden">
-                <input value="2" name="pid" type="hidden">
+                <input value="<?php echo rand( 1, 100000 ); ?>" name="pid" type="hidden">
                 <input value="http://localhost/e-commerce-website?esewa_success=1" type="hidden" name="su">
                 <input value="http://localhost/e-commerce-website?esewa_failure=0" type="hidden" name="fu">
                 <input value="Checkout" type="submit">
