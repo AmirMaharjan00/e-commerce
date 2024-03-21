@@ -1,6 +1,24 @@
 <?php
     require 'functions.php';
     get_header();
+
+    if( ( array_key_exists( 'esewa_success', $_GET ) && $_GET['esewa_success'] === '1' ) ):
+        $_SESSION = [];
+        session_destroy();
+        ?>
+            <div class="success-popup">
+                <h2>Payment was successfull.</h2>
+            </div>
+        <?php
+    endif;
+
+    if( ( array_key_exists( 'esewa_failure', $_GET ) && $_GET['esewa_failure'] === '0' ) ):
+        ?>
+            <div class="failure-popup">
+                <h2>Something went wront during the payment process. Please Try again.</h2>
+            </div>
+        <?php
+    endif;
 ?>  
     <main>
         <section>

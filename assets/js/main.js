@@ -35,9 +35,22 @@ jQuery(document).ready(function( $ ){
                     price_items: prices
                 },
                 success: function( result ){
+                    console.log( result )
                     _this.parents('body').find( '.add-to-card-popover .product-list' ).append( result )
                 }
             })
         })
+    }
+
+    // fade out esewa success popup
+    var successContaier = $('.success-popup')
+    if( successContaier.length > 0 ) {
+        successContaier.fadeOut(1000);
+    }
+    
+    // fade out esewa failure popup
+    var failureContaier = $('.failure-popup')
+    if( failureContaier.length > 0 ) {
+        failureContaier.fadeOut(1000);
     }
 })

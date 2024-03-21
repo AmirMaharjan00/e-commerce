@@ -65,7 +65,7 @@
             <div class="checkout-button">
             <form action="https://uat.esewa.com.np/epay/main" method="POST">
                 <input value="<?php echo $total_amount; ?>" name="tAmt" type="hidden">
-                <input value="90" name="amt" type="hidden">
+                <input value="<?php echo $total_amount; ?>" name="amt" type="hidden">
                 <input value="0" name="txAmt" type="hidden">
                 <input value="0" name="psc" type="hidden">
                 <input value="0" name="pdc" type="hidden">

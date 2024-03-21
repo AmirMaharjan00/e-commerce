@@ -375,13 +375,15 @@ footer .copyright {
     text-align: center;
 }
 
-.products-wrap {
+.products-wrap,
+.page-products-wrap {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
-.products-wrap .product img {
+.products-wrap .product img,
+.page-products-wrap .product img {
     height: 250px;
     width: 100%;
     object-fit: cover;
@@ -389,4 +391,12 @@ footer .copyright {
 
 .products-wrap .product .product-price {
     display: block; 
+}
+
+.main-content {
+    text-align: center;
+}
+
+.main-content .product-details {
+    margin: auto;
 }

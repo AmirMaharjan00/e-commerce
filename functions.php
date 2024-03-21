@@ -58,20 +58,22 @@ if( ! function_exists( 'add_to_cart_ajax_call' ) ) :
         $_SESSION['post_ids'] = $post_ids;
         $_SESSION['price_items'] = $price_items;
         if( ! empty( $database->all_posts ) && is_array( $database->all_posts ) ) :
-            foreach( $database->all_posts as $product ) :
-                if( $post_ids == $product['post_id'] ) :
-                    ?>
-                        <div class="product-item">
-                            <figure>
-                                <img src="<?php echo $product['featured_image']; ?>" alt="">
-                            </figure>
-                            <div class="post-content">
-                                <h2 class="post-title"><?php echo $product['post_title']; ?></h2>
-                                <span class="post-price"><?php echo '$'. $product['price'] . '.00'; ?></span>
+            foreach( $post_ids as $post_id ) :
+                foreach( $database->all_posts as $product ) :
+                    if( $post_id == $product['post_id'] ) :
+                        ?>
+                            <div class="product-item">
+                                <figure>
+                                    <img src="<?php echo $product['featured_image']; ?>" alt="">
+                                </figure>
+                                <div class="post-content">
+                                    <h2 class="post-title"><?php echo $product['post_title']; ?></h2>
+                                    <span class="post-price"><?php echo '$'. $product['price'] . '.00'; ?></span>
+                                </div>
                             </div>
-                        </div>
-                    <?php
-                endif;
+                        <?php
+                    endif;
+                endforeach;
             endforeach;
         endif;
     }
@@ -85,40 +87,3 @@ if( isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) && strtolower( $_SERVER['HTTP_X_R
         echo $action();
     }
 }
-
-if( ! function_exists( 'get_products' ) ) :
-    /**
-     * Get products
-     * 
-     * @since 1.0.0
-     */
-    function get_products() {
-        $products = [
-            [
-                'post_id'  =>  1,
-                'title' =>  'Product 1',
-                'featured_image'    =>  IMAGE_PATH . 'converse.avif',
-                'price' =>  '$10.00',
-                'description'   =>  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et lectus vel justo ultrices imperdiet.',
-                'category'  =>  []
-            ],
-            [
-                'post_id'  =>  2,
-                'title' =>  'Product 2',
-                'featured_image'    =>  IMAGE_PATH . 'convser-2.jpg',
-                'price' =>  '$15.00',
-                'description'   =>  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et lectus vel justo ultrices imperdiet.',
-                'category'  =>  []
-            ],
-            [
-                'post_id'  =>  3,
-                'title' =>  'Product 3',
-                'featured_image'    =>  IMAGE_PATH . 'product-3.jpg',
-                'price' =>  '$20.00',
-                'description'   =>  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et lectus vel justo ultrices imperdiet.',
-                'category'  =>  []
-            ]
-        ];
-        return $products;
-    }
-endif;
